@@ -1,9 +1,14 @@
-import { FB_LOGIN_SUCCESS, FB_LOGIN_FAIL } from './types';
+import {
+  FB_LOGIN_SUCCESS,
+  FB_LOGIN_FAIL
+} from './types';
 import { AsyncStorage } from 'react-native';
 import { Facebook } from 'expo';
 
 export const facebookLogin = () => async dispatch => {
-  let token = await AsyncStorage.getItem('fb_token');
+  let token = await AsyncStorage.getItem(
+    'fb_token'
+  );
 
   if (token) {
     // Dispatch an action saying FB login is done

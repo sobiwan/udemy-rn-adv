@@ -8,7 +8,8 @@ import {
 } from 'react-native';
 import { Button } from 'react-native-elements';
 
-const SCREEN_WIDTH = Dimensions.get('window').width;
+const SCREEN_WIDTH = Dimensions.get('window')
+  .width;
 
 export default class Slides extends Component {
   renderLastSlide(i) {
@@ -36,7 +37,9 @@ export default class Slides extends Component {
             }
           ]}
         >
-          <Text style={styles.slideText}>{slide.text}</Text>
+          <Text style={styles.slideText}>
+            {slide.text}
+          </Text>
           {this.renderLastSlide(i)}
         </View>
       );

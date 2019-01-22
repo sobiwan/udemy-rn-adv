@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "format": "find . -name '*.js' | grep -v node_modules | xargs prettier --single-quote --trailing-comma all --write --print-width 40"
+  },
   "dependencies": {
     "prettier": "1.15.3"
   },
@@ -12,8 +15,8 @@
     }
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --single-quote all --write --print-width 60",
+    "*.{js,json,css,md}": [
+      "prettier --single-quote --trailing-comma all --write --print-width 40",
       "git add"
     ]
   }

@@ -1,11 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
 import Expo from 'expo';
 import {
   createBottomTabNavigator,
   createAppContainer,
   createStackNavigator
 } from 'react-navigation';
+import {
+  Icon
+} from 'react-native-elements';
 import { Provider } from 'react-redux';
 
 import store from './store';
@@ -52,15 +59,27 @@ export default class App extends React.Component {
                 settings: {
                   screen: SettingsScreen
                 }
+              }),
+              navigationOptions: ({ navigation }) => ({
+                title: 'Favorites',
+                tabBarIcon: ({ tintColor }) => {
+                  return <Icon name='favorite' size={30} color={tintColor} />
+                }
               })
             }
           })
         }
       },
-      {}
+      {
+        tabBarOptions: {
+          labelStyle: { fontSize: 12 }
+        }
+      }
     );
 
-    const AppContainer = createAppContainer(MainNavigator);
+    const AppContainer = createAppContainer(
+      MainNavigator
+    );
 
     return (
       <Provider store={store}>

@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, AsyncStorage } from 'react-native';
+import {
+  View,
+  Text,
+  AsyncStorage
+} from 'react-native';
 import * as actions from '../state/actions';
 import { connect } from 'react-redux';
 
